@@ -1,0 +1,15 @@
+{
+  "name": "the-dark-side-s1-server",
+  "version": "0.0.1",
+  "description": "server gry unity",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patryk360",
+  "license": "MIT",
+  "packageManager": "yarn@4.12.0",
+  "dependencies": {
+    "socket.io": "^4.8.3"
+  }
+}
