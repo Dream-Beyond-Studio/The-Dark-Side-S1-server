@@ -2,6 +2,8 @@ const io = require("socket.io")(3000, { cors: { origin: "*" } });
 
 const players = new Map();
 
+console.log("SERWER ZOSTAŁ URUCHOMIONY NA PORCIE 3000");
+
 io.on("connection", (socket) => {
     console.log("Połączono ID: " + socket.id);
 
@@ -22,4 +24,12 @@ io.on("connection", (socket) => {
         console.log(data);
     });
 
+    socket.on("chatMessage", (data) => {
+        console.log(data);
+    });
+
+    socket.on("disconnect", () => {
+        console.log("Rozłączono ID: " + socket.id);
+        players.delete(socket.id);
+    });
 });
